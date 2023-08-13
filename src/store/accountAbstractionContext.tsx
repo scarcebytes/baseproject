@@ -179,7 +179,7 @@ const AccountAbstractionProvider = ({ children }: { children: JSX.Element }) => 
     const getSafeAddress = async () => {
       if (web3Provider) {
         const signer = web3Provider.getSigner()
-        const relayPack = new GelatoRelayPack(process.env.GELATO_RELAY_API || '')
+        const relayPack = new GelatoRelayPack(process.env.GELATO_RELAY_API)
         const safeAccountAbstraction = new AccountAbstraction(signer)
 
         await safeAccountAbstraction.init({ relayPack })
@@ -208,9 +208,9 @@ const AccountAbstractionProvider = ({ children }: { children: JSX.Element }) => 
   const relayTransaction = async () => {
     if (web3Provider) {
       setIsRelayerLoading(true)
-
+      console.log(process.env.GELATO_RELAY_API)
       const signer = web3Provider.getSigner()
-      const relayPack = new GelatoRelayPack(process.env.GELATO_RELAY_API || '')
+      const relayPack = new GelatoRelayPack(process.env.GELATO_RELAY_API)
       const safeAccountAbstraction = new AccountAbstraction(signer)
 
       await safeAccountAbstraction.init({ relayPack })
