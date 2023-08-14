@@ -17,13 +17,16 @@ import GelatoTaskStatusLabel from 'src/components/gelato-task-status-label/Gelat
 import SafeInfo from 'src/components/safe-info/SafeInfo'
 import { useAccountAbstraction } from 'src/store/accountAbstractionContext'
 
+import { SwapWidget } from '@uniswap/widgets'
+import '@uniswap/widgets/fonts.css'
+
 const transferAmount = 0.01
 
 const RelayerKitDemo = () => {
   const {
     chainId,
     chain,
-
+    web3Provider,
     safeSelected,
     safeBalance,
     isRelayerLoading,
@@ -79,6 +82,10 @@ const RelayerKitDemo = () => {
       <Typography variant="h4" component="h2" fontWeight="700" marginBottom="16px">
         Interactive demo
       </Typography>
+
+      <div className="Uniswap">
+      <SwapWidget provider={web3Provider}/>
+      </div> 
 
       {!isAuthenticated ? (
         <ConnectedContainer
