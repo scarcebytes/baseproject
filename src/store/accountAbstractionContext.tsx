@@ -210,7 +210,7 @@ const AccountAbstractionProvider = ({ children }: { children: JSX.Element }) => 
       setIsRelayerLoading(true)
       console.log(process.env.GELATO_RELAY_API)
       const signer = web3Provider.getSigner()
-      const relayPack = new GelatoRelayPack(process.env.GELATO_RELAY_API)
+      const relayPack = new GelatoRelayPack("saxHHH3f62ShtCr8gyXHPyoHvGNZlf0_mmwFswTIktQ_")
       const safeAccountAbstraction = new AccountAbstraction(signer)
 
       await safeAccountAbstraction.init({ relayPack })
