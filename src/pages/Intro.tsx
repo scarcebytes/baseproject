@@ -32,6 +32,8 @@ const Intro = ({ setStep }: IntroProps) => {
         use our different kits:
       </Typography>
 
+      
+
       {/* Kit list */}
       <Box display="flex" gap={2} marginTop="36px">
         <Box display="flex" gap={1}>

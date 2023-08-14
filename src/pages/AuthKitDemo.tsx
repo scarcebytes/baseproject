@@ -11,6 +11,12 @@ import ConnectedWalletLabel from 'src/components/connected-wallet-label/Connecte
 import SafeInfo from 'src/components/safe-info/SafeInfo'
 import { useAccountAbstraction } from 'src/store/accountAbstractionContext'
 
+import {
+  ImportantPersonCreateForm,
+  EndorsementCreateForm 
+ } from '../ui-components';
+
+
 const AuthKitDemo = () => {
   const { loginWeb3Auth, isAuthenticated, safeSelected, chainId } = useAccountAbstraction()
 
@@ -51,6 +57,11 @@ const AuthKitDemo = () => {
       <Typography variant="h4" component="h2" fontWeight="700" marginBottom="16px">
         Interactive demo
       </Typography>
+
+      <Box display="flex" gap={3}>
+      <ImportantPersonCreateForm />
+      <EndorsementCreateForm/>
+      </Box>
 
       {isAuthenticated ? (
         <Box display="flex" gap={3}>
