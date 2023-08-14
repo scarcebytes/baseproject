@@ -26,7 +26,6 @@ const RelayerKitDemo = () => {
 
     safeSelected,
     safeBalance,
-
     isRelayerLoading,
     relayTransaction,
     gelatoTaskId,
@@ -133,6 +132,15 @@ const RelayerKitDemo = () => {
 
             {isRelayerLoading && <LinearProgress sx={{ alignSelf: 'stretch' }} />}
 
+            <Button
+                  startIcon={<SendIcon />}
+                  variant="contained"
+                  onClick={()=> alert('d')}
+                >
+                  Sign Message
+                </Button>
+
+
             {!isRelayerLoading && !gelatoTaskId && (
               <>
                 <Typography fontSize="14px">
@@ -180,6 +188,7 @@ const RelayerKitDemo = () => {
     </>
   )
 }
+
 
 export default RelayerKitDemo
 

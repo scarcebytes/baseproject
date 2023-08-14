@@ -16,11 +16,13 @@ import NavMenu from './components/nav-menu/NavMenu'
 import SafeCoreInfo from './components/safe-core-info/SafeCoreInfo'
 import {
   AmplifyProvider,
-  Authenticator
+  Authenticator,
+  View
 } from "@aws-amplify/ui-react";
 import aws_exports from "./aws-exports";
 
 import "@aws-amplify/ui-react/styles.css";
+
 
 Amplify.configure(aws_exports);
 
@@ -57,6 +59,23 @@ function App() {
 
           {/* App header */}
           <Header setStep={setStep} />
+
+          {user && (
+              <View width="100%">
+                        <Typography
+                          variant="h3"
+                          component="h2"
+                          fontWeight="700"
+                          flexGrow="1"
+                          textAlign="right"
+                          fontSize="20px"
+                        >
+                Hello {user.username}</Typography>
+                <Button onClick={signOut} variant="outlined">
+                  Sign Out
+                </Button>
+              </View>
+            )}
 
           <Box
             display="flex"
