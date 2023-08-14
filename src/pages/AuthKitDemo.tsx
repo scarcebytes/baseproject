@@ -63,6 +63,7 @@ const AuthKitDemo = () => {
       <EndorsementCreateForm/>
       </Box>
 
+
       {isAuthenticated ? (
         <Box display="flex" gap={3}>
           {/* safe Account */}
